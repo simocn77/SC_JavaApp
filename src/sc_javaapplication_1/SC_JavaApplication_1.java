@@ -5,6 +5,9 @@
  */
 package sc_javaapplication_1;
 
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author simone
@@ -15,18 +18,18 @@ public class SC_JavaApplication_1 {
     int age;
 
     public static void log(String message) {
-       String fullClassName =
-               Thread.currentThread().getStackTrace()[2].getClassName();
-       String className =
-               fullClassName.substring(fullClassName.lastIndexOf(".") + 1);
-       String methodName =
-               Thread.currentThread().getStackTrace()[2].getMethodName();
-       int lineNumber =
-               Thread.currentThread().getStackTrace()[2].getLineNumber();
+        String fullClassName =
+                Thread.currentThread().getStackTrace()[2].getClassName();
+        String className =
+                fullClassName.substring(fullClassName.lastIndexOf(".") + 1);
+        String methodName =
+                Thread.currentThread().getStackTrace()[2].getMethodName();
+        int lineNumber =
+                Thread.currentThread().getStackTrace()[2].getLineNumber();
 
-       System.out.println(className + "." + methodName
-                        + "(" + lineNumber + "): "
-                        + message);
+        System.out.println(className + "." + methodName
+                         + "(" + lineNumber + "): "
+                         + message);
     }
     static float getDisount(int price)
     {
@@ -50,6 +53,30 @@ public class SC_JavaApplication_1 {
     //    SC_JavaApp.name = "Simone";
     //    age = 40;
     //    log(+name+" anni "+age);
+
+        /* Prova get from console */
+        Scanner user_input = new Scanner(System.in);
+        int first_Number, second_Number, result;
+        System.out.println("Enter first Number:");
+        first_Number = user_input.nextInt();
+        System.out.println("Enter second Number:");
+        second_Number = user_input.nextInt();
+        result = first_Number + second_Number;
+        System.out.println("Sum :"+result);
+
+        /* Prova  */
+        first_Number =
+            Integer.parseInt(JOptionPane.showInputDialog("Enter first Number"));
+        second_Number =
+            Integer.parseInt(JOptionPane.showInputDialog("Enter second Number"));
+        result = first_Number + second_Number;
+        JOptionPane.showMessageDialog(null, "Sum :"+result);
+
+        /* Prova  */
+        String name;
+        name = JOptionPane.showInputDialog("Enter your name");
+        JOptionPane.showMessageDialog(null, "Your name is: " +name);
+
     }
 
 
